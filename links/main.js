@@ -167,7 +167,7 @@ $(document).ready(function(){
 				checkIncrement();
 				updateLayout();
 				drawCanvas();
-			} else if (delta < 0 && inValue > 5) {
+			} else if (delta < 0 && inValue > 4) {
 				inOutput.val(inValue - 1);
 				checkIncrement();
 				updateLayout();
@@ -565,7 +565,7 @@ $(document).ready(function(){
 	// VALUE CHANGED: Increment
 	$('.increment input').bind('keyup change', function() {
 		var inc = $(this).val();								
-		if (parseInt(inc) >= 5 &&
+		if (parseInt(inc) >= 4 &&
 			parseInt(inc) < 100 &&
 			parseInt(inc) === parseFloat(inc)) {
 			checkIncrement();
@@ -601,7 +601,7 @@ $(document).ready(function(){
 		if (parseInt(m) >= 0 &&
 			parseInt(m) < 1000 &&
 			parseInt(m) === parseFloat(m) &&
-			parseInt(inc) >= 5 && parseInt(inc) < 1000 &&
+			parseInt(inc) >= 4 && parseInt(inc) < 1000 &&
 			parseInt(inc) === parseFloat(inc) &&
 			parseInt(ratio) === parseFloat(ratio) && points) {
 			$(this).removeClass('error');
@@ -627,7 +627,7 @@ $(document).ready(function(){
 		if (parseInt(m) >= 0 &&
 			parseInt(m) < 1000 &&
 			parseInt(m) === parseFloat(m) &&
-			parseInt(inc) >= 5 && parseInt(inc) < 1000 &&
+			parseInt(inc) >= 4 && parseInt(inc) < 1000 &&
 			parseInt(inc) === parseFloat(inc) &&
 			parseInt(ratio) === parseFloat(ratio) && points) {
 			$(this).removeClass('error');
