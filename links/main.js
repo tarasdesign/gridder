@@ -162,7 +162,7 @@ $(document).ready(function(){
 		if ((typeof(lastPosition.x) !== 'undefined') && inPressed) {
 			$('*').css({'user-select':'none'});
 			delta = lastPosition.y - event.offsetY;
-			if (delta > 0 && inValue < 50) {
+			if (delta > 0 && inValue < 100) {
 				inOutput.val(inValue + 1);
 				checkIncrement();
 				updateLayout();
@@ -251,7 +251,7 @@ $(document).ready(function(){
 		if ((typeof(lastPosition.x) !== 'undefined') && pwPressed) {
 			$('*').css({'user-select':'none'});
 			delta = lastPosition.x - event.offsetX;
-			if (delta > 0 && pwValue > 100) {
+			if (delta > 0 && pwValue > 50) {
 				pwOutput.val(pwValue - 1);
 				if (chained) {chainHeight();}
 				checkSizes();
@@ -383,7 +383,7 @@ $(document).ready(function(){
 	// SIZE CHANGED
 	$('.sizeGroup .data input').bind('keyup change', function() {
 		var data = $(this).val();
-		if (parseFloat(data) >= 100 && parseFloat(data) < 10000) {
+		if (parseFloat(data) >= 50 && parseFloat(data) < 10000) {
 			$(this).removeClass('error');
 			
 			// Chain
