@@ -149,7 +149,7 @@ $(document).ready(function(){
 				checkSizes();
 				updateLayout();
 				drawCanvas();
-			} else if (delta < 0 && phValue > 100) {
+			} else if (delta < 0 && phValue > 50) {
 				phOutput.val(phValue - 1);
 				if (chained) {chainWidth();}
 				checkSizes();
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		if ((typeof(lastPosition.x) !== 'undefined') && inPressed) {
 			$('*').css({'user-select':'none'});
 			delta = lastPosition.y - event.offsetY;
-			if (delta > 0 && inValue < 100) {
+			if (delta > 0 && inValue < 50) {
 				inOutput.val(inValue + 1);
 				checkIncrement();
 				updateLayout();
