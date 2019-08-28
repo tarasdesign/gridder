@@ -439,7 +439,44 @@ a:hover {
 	color: blue;
 	}
 
+/* SAFARI 10.1+ */
+/* @media not all and (min-resolution:.001dpcm) { @media { */
 
+	block.layout {
+		height: 206px;
+		padding-top: 4px;
+	}
+	
+	block.margins {
+		height: 149px;
+		padding-top: 4px;
+	}
+	
+	ul.defaultFormats {
+		padding: 30px 0 5px 30px;
+	}
+
+	li:not(.orient) {
+		margin-top: -3px;
+	}
+	
+	.data {
+		padding-bottom: 7px;		
+	}
+	
+	.sizeGroup .data span {
+		margin-top: 18px;
+	}
+
+	.chain {
+		margin: 62px 0 0 10px;
+	}
+	
+	.icon {
+		margin-top: 17px;
+	}
+	
+/* }} */
 
 
 /* //////////////////////////////////////////////////////////// */
