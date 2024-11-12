@@ -151,7 +151,7 @@ input::selection, .finalMarginBottom::selection {
 	margin: 1px 0 0 1px;
 	width: 50px;
 	height: 36px;
-	line-height: 32px;
+	line-height: 34px;
 	border-radius: 20px;
 	-webkit-transition: margin 0.2s cubic-bezier(0.8,0.0,0.4,1.5);
 	-moz-transition: margin 0.2s cubic-bezier(0.8,0.0,0.4,1.5);
@@ -172,7 +172,7 @@ input::selection, .finalMarginBottom::selection {
 	margin: 1px 0 0 1px;
 	width: 36px;
 	height: 36px;
-	line-height: 34px;
+	line-height: 36px;
 	border-radius: 20px;
 	}
 
