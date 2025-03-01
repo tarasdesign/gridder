@@ -1,160 +1,21 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Gridder – Modular Grid Generator</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="margin size generator indesign baselines modular grid layout design" />
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
-<link href="links/style.css" rel="stylesheet" type="text/css">
-<link rel="icon" type="image/png" href="links/images/favicon.png">
-<link rel="apple-touch-icon" sizes="152x152" href="links/images/apple-touch-icon.png">
-<script src="links/jquery.min.js"></script>
-<script src="links/main.js"></script>
-<script type="text/javascript">
-	// Input Restriction
-	var digitsOnly = /[1234567890]/g;
-	//var floatOnly = /[0-9\.]/g;
-	//var alphaOnly = /[A-Za-z]/g;
-	function restrictCharacters(myfield, e, restrictionType) {
-		if (!e) var e = window.event
-		if (e.keyCode) code = e.keyCode;
-		else if (e.which) code = e.which;
-		var character = String.fromCharCode(code);
-		// if esc, remove focus from field
-		if (code==27) { this.blur(); return false; }
-		// ignore other keys
-		if (!e.ctrlKey && code!=9 && code!=8 && code!=36 && code!=37 && code!=38 && (code!=39 || (code==39 && character=="'")) && code!=40) {
-			if (character.match(restrictionType)) {return true;} else {return false;}
-		}
-	}
-</script>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+
+    <!-- Meta Redirect (For Non-JavaScript Browsers) -->
+    <meta http-equiv="refresh" content="5; url=https://taras.ee/grids">
+
+    <script>
+        // JavaScript Redirect (Works Faster & Ensures Redirect)
+        setTimeout(function() {
+            window.location.replace("https://taras.ee/grids");
+        }, 5000); // 5-second delay before redirect
+    </script>
 </head>
-
 <body>
-
-<div class="block toggles">
-	<span class="toggle unit"><span>pt</span></span>
-	<span class="toggle color"><span>rgb</span></span>
-	<span class="toggle question"><span>?</span></span>
-</div>
-
-<div class="block format">
-	<ul class="defaultFormats">
-		<li class="orient icon-FormatVert"></li>
-		<li class="letter selected">Letter</li>
-		<li class="legal">Legal</li>
-		<li class="a4">A4</li>
-		<li class="a3">A3</li>
-	</ul>
-	<div class="sizeGroup">
-		<div class="data pageWidth">
-			<span>W</span>
-			<input class="w" type="number" value="612" min="1" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-		</div>
-		<div class="data pageHeight">
-			<span>H</span>
-			<input class="h" type="number" value="792" min="1" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-		</div>
-	</div>
-	<div class="chain icon-Unchain"></div>
-</div>
-
-<div class="block layout">
-	<div class="data increment">
-		<span class="icon icon-Increment"></span>
-		<input type="number" value="12" min="5" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data numberOfRows integer">
-		<span class="icon icon-Rows"></span>
-		<input type="number" value="8" min="1" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data numberOfCols integer">
-		<span class="icon icon-Cols"></span>
-		<input type="number" value="6" min="1" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data linesInHorizGutter gutterInteger">
-		<span class="icon icon-GutterHoriz"></span>
-		<input type="number" value="1" min="0" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data linesInVertGutter gutterInteger">
-		<span class="icon icon-GutterVert"></span>
-		<input type="number" value="1" min="0" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-</div>
-
-<div class="block margins">
-	<div class="data marginTop">
-		<span class="icon icon-MarginTop"></span>
-		<input type="number" value="48" min="0" step="12" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data marginLeft sideMargin">
-		<span class="icon icon-MarginLeft"></span>
-		<input type="number" value="48" min="0" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-	<div class="data marginBottom">
-		<span class="icon icon-MarginBottom"></span>
-		<input type="number" value="48" min="0" step="12" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-		<div class="labelComment">(min)</div>
-	</div>
-	<div class="data marginRight sideMargin">
-		<span class="icon icon-MarginRight"></span>
-		<input type="number" value="48" min="0" step="1" onkeypress="return restrictCharacters(this, event, digitsOnly);">
-	</div>
-</div>
-
-<div class="block download">
-	<span class="downloadButton">Download</span>
-</div>
-
-<div class="guide">
-	<p>You can choose either points or millimetres as units. However, baseline grid increment is always measured in points.</p>
-	<p>Horizontal and vertical gutters are measured in lines.</p>
-	<p>Although you can choose the mini-mum bottom margin, its actual value is auto-calculated so that all modules always match the baseline grid.</p>
-	<p>Enjoy and share!</p>
-</div>
-
-<div class="canvas"><div class="sectionContainer"></div></div>
-
-<div class="footer">
-	<div class="finalMarginBottom"></div>
-	<div class="labelBottom">actual bottom margin</div>
-</div>
-
-<div class="copyright"><a href="https://taras.ee">©</a></div>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter48190259 = new Ya.Metrika({
-                    id:48190259,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/48190259" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-	
-<script src="links/jspdf.min.js"></script>
-
+    <h2>I’ve moved to <a href="https://taras.ee/grids">taras.ee/grids</a></h2>
+    <p>You’ll be redirected automatically in <strong>5 seconds</strong></p>
 </body>
-
 </html>
